@@ -9,8 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as OrtaokulEkolojiVeDogaOkuluRouteImport } from './routes/ortaokul-ekoloji-ve-doga-okulu'
+import { Route as MerkeziKayitFormuRouteImport } from './routes/merkezi-kayit-formu'
+import { Route as LiseBilimVeOlimpiyatKamplariRouteImport } from './routes/lise-bilim-ve-olimpiyat-kamplari'
+import { Route as KurumsalRouteImport } from './routes/kurumsal'
+import { Route as GururTablosuRouteImport } from './routes/gurur-tablosu'
 import { Route as IndexRouteImport } from './routes/index'
 
+const OrtaokulEkolojiVeDogaOkuluRoute =
+  OrtaokulEkolojiVeDogaOkuluRouteImport.update({
+    id: '/ortaokul-ekoloji-ve-doga-okulu',
+    path: '/ortaokul-ekoloji-ve-doga-okulu',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MerkeziKayitFormuRoute = MerkeziKayitFormuRouteImport.update({
+  id: '/merkezi-kayit-formu',
+  path: '/merkezi-kayit-formu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiseBilimVeOlimpiyatKamplariRoute =
+  LiseBilimVeOlimpiyatKamplariRouteImport.update({
+    id: '/lise-bilim-ve-olimpiyat-kamplari',
+    path: '/lise-bilim-ve-olimpiyat-kamplari',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const KurumsalRoute = KurumsalRouteImport.update({
+  id: '/kurumsal',
+  path: '/kurumsal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GururTablosuRoute = GururTablosuRouteImport.update({
+  id: '/gurur-tablosu',
+  path: '/gurur-tablosu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +51,102 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gurur-tablosu': typeof GururTablosuRoute
+  '/kurumsal': typeof KurumsalRoute
+  '/lise-bilim-ve-olimpiyat-kamplari': typeof LiseBilimVeOlimpiyatKamplariRoute
+  '/merkezi-kayit-formu': typeof MerkeziKayitFormuRoute
+  '/ortaokul-ekoloji-ve-doga-okulu': typeof OrtaokulEkolojiVeDogaOkuluRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gurur-tablosu': typeof GururTablosuRoute
+  '/kurumsal': typeof KurumsalRoute
+  '/lise-bilim-ve-olimpiyat-kamplari': typeof LiseBilimVeOlimpiyatKamplariRoute
+  '/merkezi-kayit-formu': typeof MerkeziKayitFormuRoute
+  '/ortaokul-ekoloji-ve-doga-okulu': typeof OrtaokulEkolojiVeDogaOkuluRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gurur-tablosu': typeof GururTablosuRoute
+  '/kurumsal': typeof KurumsalRoute
+  '/lise-bilim-ve-olimpiyat-kamplari': typeof LiseBilimVeOlimpiyatKamplariRoute
+  '/merkezi-kayit-formu': typeof MerkeziKayitFormuRoute
+  '/ortaokul-ekoloji-ve-doga-okulu': typeof OrtaokulEkolojiVeDogaOkuluRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/gurur-tablosu'
+    | '/kurumsal'
+    | '/lise-bilim-ve-olimpiyat-kamplari'
+    | '/merkezi-kayit-formu'
+    | '/ortaokul-ekoloji-ve-doga-okulu'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/gurur-tablosu'
+    | '/kurumsal'
+    | '/lise-bilim-ve-olimpiyat-kamplari'
+    | '/merkezi-kayit-formu'
+    | '/ortaokul-ekoloji-ve-doga-okulu'
+  id:
+    | '__root__'
+    | '/'
+    | '/gurur-tablosu'
+    | '/kurumsal'
+    | '/lise-bilim-ve-olimpiyat-kamplari'
+    | '/merkezi-kayit-formu'
+    | '/ortaokul-ekoloji-ve-doga-okulu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GururTablosuRoute: typeof GururTablosuRoute
+  KurumsalRoute: typeof KurumsalRoute
+  LiseBilimVeOlimpiyatKamplariRoute: typeof LiseBilimVeOlimpiyatKamplariRoute
+  MerkeziKayitFormuRoute: typeof MerkeziKayitFormuRoute
+  OrtaokulEkolojiVeDogaOkuluRoute: typeof OrtaokulEkolojiVeDogaOkuluRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ortaokul-ekoloji-ve-doga-okulu': {
+      id: '/ortaokul-ekoloji-ve-doga-okulu'
+      path: '/ortaokul-ekoloji-ve-doga-okulu'
+      fullPath: '/ortaokul-ekoloji-ve-doga-okulu'
+      preLoaderRoute: typeof OrtaokulEkolojiVeDogaOkuluRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merkezi-kayit-formu': {
+      id: '/merkezi-kayit-formu'
+      path: '/merkezi-kayit-formu'
+      fullPath: '/merkezi-kayit-formu'
+      preLoaderRoute: typeof MerkeziKayitFormuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lise-bilim-ve-olimpiyat-kamplari': {
+      id: '/lise-bilim-ve-olimpiyat-kamplari'
+      path: '/lise-bilim-ve-olimpiyat-kamplari'
+      fullPath: '/lise-bilim-ve-olimpiyat-kamplari'
+      preLoaderRoute: typeof LiseBilimVeOlimpiyatKamplariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kurumsal': {
+      id: '/kurumsal'
+      path: '/kurumsal'
+      fullPath: '/kurumsal'
+      preLoaderRoute: typeof KurumsalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gurur-tablosu': {
+      id: '/gurur-tablosu'
+      path: '/gurur-tablosu'
+      fullPath: '/gurur-tablosu'
+      preLoaderRoute: typeof GururTablosuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +159,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GururTablosuRoute: GururTablosuRoute,
+  KurumsalRoute: KurumsalRoute,
+  LiseBilimVeOlimpiyatKamplariRoute: LiseBilimVeOlimpiyatKamplariRoute,
+  MerkeziKayitFormuRoute: MerkeziKayitFormuRoute,
+  OrtaokulEkolojiVeDogaOkuluRoute: OrtaokulEkolojiVeDogaOkuluRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
