@@ -67,7 +67,7 @@ function Index() {
           height={1080}
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/80 to-navy-deep/40"
+          className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/85 to-navy-deep/55"
           aria-hidden
         />
         <div className="container-prose relative pb-24 pt-40">
