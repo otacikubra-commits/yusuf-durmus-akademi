@@ -84,6 +84,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Prof. Dr. Yusuf Durmuş Akademi" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Prof. Dr. Yusuf Durmuş Akademi — Bilim ve Doğa Kampları" },
+      { name: "twitter:title", content: "Prof. Dr. Yusuf Durmuş Akademi — Bilim ve Doğa Kampları" },
+      { name: "description", content: "Corporate website for Yusuf Durmuş Akademi & Bilim Kampları, showcasing programs and information." },
+      { property: "og:description", content: "Corporate website for Yusuf Durmuş Akademi & Bilim Kampları, showcasing programs and information." },
+      { name: "twitter:description", content: "Corporate website for Yusuf Durmuş Akademi & Bilim Kampları, showcasing programs and information." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/53ffb3c5-0c5d-4f51-b05b-4bd373f170b3/id-preview-d89d9278--14f93495-e335-4de2-bc95-14f9cad6f157.lovable.app-1781552318711.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/53ffb3c5-0c5d-4f51-b05b-4bd373f170b3/id-preview-d89d9278--14f93495-e335-4de2-bc95-14f9cad6f157.lovable.app-1781552318711.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
