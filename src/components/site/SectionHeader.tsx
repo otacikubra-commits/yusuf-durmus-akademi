@@ -11,21 +11,21 @@ export function SectionHeader({
   intro?: ReactNode;
   align?: "left" | "center";
 }) {
-  const alignCls = align === "center" ? "text-center mx-auto" : "";
+  const alignCls = align === "center" ? "text-center mx-auto items-center" : "";
   return (
-    <div className={`max-w-3xl ${alignCls}`}>
+    <div className={`reveal max-w-3xl flex flex-col ${alignCls}`}>
       {eyebrow && (
-        <div className="mb-4 flex items-center gap-3">
+        <div className="mb-5 flex items-center gap-3">
           {align === "center" && <span className="gold-rule" />}
           <span className="eyebrow">{eyebrow}</span>
           <span className="gold-rule" />
         </div>
       )}
-      <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-navy-deep">
+      <h2 className="font-display text-[2.4rem] md:text-5xl lg:text-[3.4rem] leading-[1.04] tracking-[-0.015em] text-navy-deep">
         {title}
       </h2>
       {intro && (
-        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+        <p className="mt-6 text-lg leading-[1.75] text-muted-foreground max-w-2xl">
           {intro}
         </p>
       )}

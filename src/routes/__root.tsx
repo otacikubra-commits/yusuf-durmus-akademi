@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { useReveal } from "../hooks/use-reveal";
 
 function NotFoundComponent() {
   return (
@@ -124,6 +125,22 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  // Re-arm reveal animations on every route change
+  useReveal();
+  useEffect(() => {
+    const unsub = router.subscribe("onResolved", () => {
+      // small delay so newly mounted DOM picks up observer
+      requestAnimationFrame(() => {
+        document.querySelectorAll<HTMLElement>(".reveal:not(.is-visible)").forEach((el) => {
+          // observer will pick it up; nudge in case already in viewport
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.95) el.classList.add("is-visible");
+        });
+      });
+    });
+    return () => unsub();
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
