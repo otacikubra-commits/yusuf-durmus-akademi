@@ -71,49 +71,232 @@ function Kurumsal() {
         image={profesorImg}
       />
 
-      {/* Biyografi */}
-      <section className="py-28 bg-cream">
+      {/* Selamlama */}
+      <section className="py-24 bg-cream">
+        <div className="container-prose">
+          <div className="reveal max-w-4xl mx-auto text-center">
+            <h2 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight">
+              Yusuf Durmuş Kimdir?
+            </h2>
+            <p className="mt-8 text-xl md:text-2xl text-foreground/80 leading-relaxed font-display italic">
+              "Saygıdeğer Öğretmen Arkadaşlarım, Sevgili Öğrenciler, Veliler ve Sayfa Ziyaretçileri,"
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Biyografi — tüm bölümler */}
+      <section className="pb-24 bg-cream">
         <div className="container-prose grid gap-14 lg:grid-cols-12">
           <aside className="lg:col-span-4">
-            <div className="relative">
-              <div className="absolute -inset-4 border border-gold/40" aria-hidden />
-              <img
-                src={profesorImg}
-                alt="Prof. Dr. Yusuf Durmuş portresi"
-                className="relative w-full object-cover"
-                loading="lazy"
-                width={1400}
-                height={1600}
-              />
-            </div>
-            <div className="mt-6 text-sm text-muted-foreground italic">
-              “En büyük ve kalıcı yatırım, insana yapılan yatırımdır.”
+            <div className="lg:sticky lg:top-28">
+              <div className="relative">
+                <div className="absolute -inset-4 border border-gold/40" aria-hidden />
+                <img
+                  src={profesorImg}
+                  alt="Prof. Dr. Yusuf Durmuş portresi"
+                  className="relative w-full object-cover"
+                  loading="lazy"
+                  width={1400}
+                  height={1600}
+                />
+              </div>
+              <div className="mt-6 text-sm text-muted-foreground italic text-center">
+                "En büyük ve kalıcı yatırım, insana yapılan yatırımdır."
+              </div>
             </div>
           </aside>
-          <div className="lg:col-span-8">
-            <SectionHeader
-              eyebrow="Biyografi"
-              title="Bir Anadolu çocuğundan Hacettepe akademisyenine."
-            />
-            <div className="mt-8 space-y-6 text-foreground/85 text-lg leading-[1.8]">
-              <p>
-                1967 yılında Trabzon’un Araklı ilçesinde, elektrik olmayan bir
-                köyde, gaz lambasının ışığında başlayan bir eğitim yolculuğu…
-                İlkokul ve ortaokula her gün kara lastikleriyle 5 kilometreden
-                fazla yürüyerek giden, okul dışındaki zamanlarında ise ailesine
-                yardım edip inek otlatan bir Anadolu çocuğunun, bugün
-                Türkiye’nin en başarılı bilim insanlarını yetiştiren bir
-                Hacettepe Üniversitesi akademisyenine dönüşmesinin hikâyesi.
-              </p>
-              <p>
-                Atatürk Üniversitesi Eğitim Fakültesi Biyoloji Bölümü’nden
-                mezun olan ve lisansüstü eğitimini Gazi Üniversitesi’nde
-                tamamlayan Prof. Dr. Yusuf Durmuş, 30 yılı aşkın akademik
-                hayatı boyunca <em>“en büyük ve kalıcı yatırımın insana
-                yapılan yatırım olduğu”</em> inancıyla hareket etmiştir.
-                Kendisi evli ve iki çocuk babasıdır; çocuklarından biri Uzman
-                Diş Hekimi, diğeri ise Tıp Doktorudur.
-              </p>
+
+          <div className="lg:col-span-8 space-y-20">
+            {/* Bölüm 1: İlk Yıllar */}
+            <div className="reveal">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="gold-rule" />
+                <span className="eyebrow">Biyografi</span>
+              </div>
+              <h3 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight mb-8">
+                İlk Yıllar ve Eğitim Hayatı
+              </h3>
+              <div className="space-y-6 text-foreground/85 text-lg leading-[1.8]">
+                <p>
+                  1967 yılında Trabzon ili, Araklı ilçesi, Değirmencik köyünde doğdum. İlkokul ve ortaöğrenimimi, henüz elektrik olmayan köyümde, gaz lambası ışığında tamamladım. Okula gidebilmek için her gün 5 kilometreden fazla yolu kara lastiklerimle yürüyerek katettim; okul dışındaki zamanlarımda ise inek otlatıp köy işlerine yardım ettim. Lise hayatımı Araklı'da, arkadaşlarımla birlikte bir odada kalıp kendi yemeğimizi yaparak okudum ve hafta sonları yine köyüme dönerek aileme destek oldum.
+                </p>
+                <p>
+                  Bu zorlu ama değerli şartların ardından, Atatürk Üniversitesi Eğitim Fakültesi Biyoloji Bölümü'nü bitirdim. Lisansüstü eğitimimi ise Gazi Üniversitesi'nde tamamladım.
+                </p>
+                <div className="bg-cream-soft border-l-4 border-gold p-6 rounded-r-md">
+                  <p className="text-foreground/80">
+                    <strong>Eşim:</strong> Seval Durmuş (Öğretmen)
+                  </p>
+                  <p className="text-foreground/80 mt-2">
+                    <strong>Çocuklarım:</strong> Uzman Diş Doktoru Duygu Durmuş (Alkan) ve Doktor Ayşe Deniz Durmuş.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bölüm 2: Akademik Kariyer */}
+            <div className="reveal">
+              <h3 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight mb-8">
+                Akademik ve Mesleki Kariyer
+              </h3>
+              <div className="space-y-6 text-foreground/85 text-lg leading-[1.8]">
+                <p>
+                  Halen Hacettepe Üniversitesi Biyoloji Bölümü'nde Öğretim Görevlisi olarak görev yapmaktayım. 30 yıllık akademik hayatım boyunca kesintisiz olarak eğitim ve araştırma faaliyetlerinde bulundum. Meslek hayatım boyunca birçok bilimsel araştırma projesinde görev aldım, çok sayıda bilimsel makale ve kitap bölümü yazdım. Hiçbir siyasi partiye üye değilim.
+                </p>
+                <p>
+                  Yürüttüğüm birbirinden farklı çalışmalarda, en kalıcı yatırımın insana yapılan yatırım olduğunu bizzat yaşayarak öğrendim. Sivil toplum kuruluşlarında uzun yıllar yönetim kurulu üyesi ve başkan olarak görev aldım. Ayrıca Hacettepe Beytepe İlköğretim Okulu'nun yapılandırılması ve eğitiminin geliştirilmesi kapsamında uzun yıllar yönetim kurulu başkanlığı görevini üstlendim.
+                </p>
+              </div>
+            </div>
+
+            {/* Bölüm 3: Müze */}
+            <div className="reveal">
+              <h3 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight mb-8">
+                Müze Kuruculuğu ve Yayınlar
+              </h3>
+              <div className="space-y-6 text-foreground/85 text-lg leading-[1.8]">
+                <p>
+                  Ülkemizde sayıları çok az olan iki önemli müzenin kurucuları arasında yer almaktayım:
+                </p>
+                <ul className="space-y-3 list-disc list-inside text-foreground/85">
+                  <li>Hacettepe Üniversitesi Zooloji Müzesi.</li>
+                  <li>Kemaliye'de kurmuş olduğumuz Prof. Dr. Ali Demirsoy Doğa Tarihi Müzesi.</li>
+                </ul>
+                <p>
+                  Kurucuları arasında bulunduğum Hacettepe Üniversitesi Zooloji Müzesi'nde her yıl binlerce ziyaretçiyi kabul ederek eğitimler vermekteyim.
+                </p>
+              </div>
+            </div>
+
+            {/* Bölüm 4: Medya */}
+            <div className="reveal">
+              <h3 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight mb-8">
+                Medya ve Belgesel Çalışmaları
+              </h3>
+              <div className="space-y-6 text-foreground/85 text-lg leading-[1.8]">
+                <p>
+                  TRT Kurumu tarafından desteklenen ve halen TRT'de yayınlanmakta olan iki adet belgesel çekiminde bilimsel danışmanlık yaptım: <em>Renklerin Dansı</em> (4 Bölüm) ve <em>Akrep Belgeseli</em> (1 Bölüm).
+                </p>
+                <p>
+                  YouTube kanalımda ise doğaya dair 200 civarında özgün belgeselim bulunmaktadır.{" "}
+                  <a
+                    href="https://www.youtube.com/@yusufdurmus1942"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gold underline underline-offset-4 hover:text-navy-deep transition-colors"
+                  >
+                    YouTube kanalım için tıklayınız.
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            {/* Bölüm 5: Projeler */}
+            <div className="reveal">
+              <h3 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight mb-8">
+                Projeler ve Doğa Eğitimi Çalışmaları
+              </h3>
+              <div className="space-y-6 text-foreground/85 text-lg leading-[1.8]">
+                <p>
+                  30 yıldır ülkemiz gençlerinin ve öğretmenlerinin eğitilmesi amacıyla çok sayıda projede aktif görev aldım. Türkiye'de alanında en çok proje yapan akademisyen olduğumu söyleyebilirim. Proje yürütücülüğü ve yardımcılığı yapmış olduğum bu çalışmalarda 100'den fazla öğretim elemanı görev almıştır.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="bg-cream-soft p-6 rounded-sm border border-border/50">
+                    <div className="font-display text-4xl text-gold">12</div>
+                    <div className="mt-2 text-foreground/80">Araştırma Projesi</div>
+                  </div>
+                  <div className="bg-cream-soft p-6 rounded-sm border border-border/50">
+                    <div className="font-display text-4xl text-gold">9</div>
+                    <div className="mt-2 text-foreground/80">TÜBİTAK Doğa Eğitimi Projesi</div>
+                  </div>
+                  <div className="bg-cream-soft p-6 rounded-sm border border-border/50">
+                    <div className="font-display text-4xl text-gold">14</div>
+                    <div className="mt-2 text-foreground/80">TÜBİTAK BİDEB Öğretmen Eğitimi</div>
+                  </div>
+                  <div className="bg-cream-soft p-6 rounded-sm border border-border/50">
+                    <div className="font-display text-4xl text-gold">680+</div>
+                    <div className="mt-2 text-foreground/80">Eğitilen Öğretmen, Öğrenci ve Doğasever</div>
+                  </div>
+                </div>
+                <p>
+                  9 tane TÜBİTAK destekli Doğa Eğitimi projesi yürüterek; 680 civarında öğretmen, öğrenci ve doğaseverin eğitilmesine katkı sağladım. 14 tane TÜBİTAK BİDEB destekli Öğretmen Eğitimi projesi gerçekleştirdim. Bu eğitimlere katılan 546 öğretmen arkadaşım, halen ülkemizin başarılı ve seçkin okullarında görev yapmaktadır.
+                </p>
+                <p>
+                  Bilecik ve Bozüyük'te gerçekleşen TÜBİTAK destekli 4007 projesinde görev alarak konferanslar verdim ve uygulama eğitimleri gerçekleştirdim. Bu etkinliklere binlerce öğrenci katılım sağladı.
+                </p>
+              </div>
+            </div>
+
+            {/* Bölüm 6: Olimpiyatlar */}
+            <div className="reveal">
+              <h3 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight mb-8">
+                Bilim Olimpiyatları Başarıları
+              </h3>
+              <div className="space-y-6 text-foreground/85 text-lg leading-[1.8]">
+                <p>
+                  Ülkemiz, Dünya Biyoloji Olimpiyatlarına ilk kez 26 yıl önce katıldı. Ben de TÜBİTAK Olimpiyatları'nın kurulduğu 1993 tarihinden 2015 yılına kadar, 22 yıl boyunca aralıksız olarak Türkiye TÜBİTAK Biyoloji Olimpiyatlarında görev yaptım. Bu vesileyle binlerce öğrenciye eğitmenlik etme fırsatı buldum.
+                </p>
+                <p>
+                  2000 yılında Antalya'da gerçekleştirilen Uluslararası TÜBİTAK Biyoloji Olimpiyatları'nda TÜBİTAK Bilim Komitesi'nde görev aldım. Uluslararası Olimpiyatlarda dünya birincisi olan ve çok sayıda madalya kazanan öğrencilerin eğitimlerinde bilfiil görev yaptım.
+                </p>
+                <p>
+                  TÜBİTAK BİDEB destekli, başarılı ortaöğretim öğrencilerine yönelik 4 proje yürüttüm. Bu eğitimlere katılan 320 başarılı öğrencimizin bir kısmı Ulusal Biyoloji Olimpiyatlarında; bir kısmı ise Uluslararası Biyoloji Olimpiyatlarında Altın, Gümüş ve Bronz madalyalar kazandılar.
+                </p>
+                <p>
+                  Bu 320 öğrencimizin bazıları bugün üniversiteyi bitirip meslek hayatına atılırken, bazıları da üniversitelerimizin en seçkin bölümlerinde eğitimlerine devam etmektedir. Dünyanın sayılı üniversitelerine referans olarak öğrenci göndermenin mutluluğunu yaşadım; günümüzde dünyanın en iyi üniversitelerinde kürsü başkanı konumunda olan öğrencilerim bulunmaktadır.
+                </p>
+              </div>
+            </div>
+
+            {/* Bölüm 7: Kamplar */}
+            <div className="reveal">
+              <h3 className="font-display text-3xl md:text-4xl text-navy-deep leading-tight mb-8">
+                Bilim Kampları ve Gezici Müze Faaliyetleri
+              </h3>
+              <div className="space-y-6 text-foreground/85 text-lg leading-[1.8]">
+                <p>
+                  Başarılı ve hedefi olan öğrenci ile öğretmenlere yönelik Biyoloji Bilim Kampları düzenlemekteyim. Her yıl yarıyıl tatilinde ve yaz aylarında; Biyoloji, Fizik, Kimya ve Matematik Bilim Kamplarının proje yürütücülüğünü üstleniyorum. Bu kamp ve etkinliklerimize her yıl bin civarında öğrenci katılıyor.
+                </p>
+                <p>
+                  Kişisel biyolojik örneklerden, fotoğraflardan, fosillerden ve mikroskoplardan oluşan bir Gezici Müzem bulunmaktadır. Gezici müze ile her yıl çok sayıda eğitim kurumuna davet ediliyor; buralarda konferanslar verip, sergiler açıyor ve uygulama eğitimleri düzenliyorum.
+                </p>
+                <div className="grid sm:grid-cols-3 gap-4">
+                  <div className="bg-cream-soft p-6 rounded-sm border border-border/50 text-center">
+                    <div className="font-display text-4xl text-gold">30.000+</div>
+                    <div className="mt-2 text-sm text-foreground/70">Yıllık Katılımcı</div>
+                  </div>
+                  <div className="bg-cream-soft p-6 rounded-sm border border-border/50 text-center">
+                    <div className="font-display text-4xl text-gold">100+</div>
+                    <div className="mt-2 text-sm text-foreground/70">Son 3 Yılda Kurum</div>
+                  </div>
+                  <div className="bg-cream-soft p-6 rounded-sm border border-border/50 text-center">
+                    <div className="font-display text-4xl text-gold">0 ₺</div>
+                    <div className="mt-2 text-sm text-foreground/70">Ücret Talebi</div>
+                  </div>
+                </div>
+                <p>
+                  Yaptığım tüm bu etkinliklere her yıl yaklaşık 30 bine yakın kişi katılmaktadır. Son 3 yılda 100'den fazla eğitim kurumunda bilimsel etkinlik gerçekleştirdim. Davetli konferanslar, sergiler, uygulama eğitimleri, arazi çalışmaları ve doğa eğitimleri için hiçbir ücret talep etmemekte, farklı illerdeki bu etkinliklere kendi imkânlarımla gitmekteyim.
+                </p>
+              </div>
+            </div>
+
+            {/* Bölüm 8: Vizyon */}
+            <div className="reveal bg-navy-deep text-cream p-10 md:p-14 rounded-sm">
+              <h3 className="font-display text-3xl md:text-4xl text-cream leading-tight mb-8">
+                Vizyonum ve Felsefem
+              </h3>
+              <div className="space-y-6 text-cream/85 text-lg leading-[1.8]">
+                <p>
+                  Hayattaki temel felsefem; öncelikle insanı sevmek, fedakârlık yapabilmek, hedef koymak ve o hedefe kararlılıkla yürümektir.
+                </p>
+                <p>
+                  En iyi yatırımın, geleceğimiz olan gençlere yapılan yatırım olduğu yaklaşımından yola çıkarak; bugüne kadar olduğu gibi bundan sonra da gençlerin yetişmesine yönelik projeler üretmeye devam edeceğim. Yolumun kesiştiği tüm insanlara, hiçbir ayrım gözetmeksizin koşulsuz destek olacağımı bilmenizi isterim.
+                </p>
+                <p className="font-display text-2xl text-gold pt-4">
+                  Selam, Sevgi ve Saygılarımla.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -153,7 +336,7 @@ function Kurumsal() {
             eyebrow="Referans Kurumlar"
             title={
               <span className="text-cream">
-                Türkiye’nin{" "}
+                Türkiye'nin{" "}
                 <em className="text-gold not-italic">seçkin okullarında</em>{" "}
                 konferans ve saha çalışmaları.
               </span>
