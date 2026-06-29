@@ -24,7 +24,7 @@ export const Route = createFileRoute("/merkezi-kayit-formu")({
 
 type Form = {
   kademe: "" | "ortaokul" | "lise";
-  program: string;
+  program: string[];
   
   okul: string;
   sinif: string;
@@ -65,7 +65,7 @@ function KayitPage() {
   const [done, setDone] = useState(false);
   const [form, setForm] = useState<Form>({
     kademe: "",
-    program: "",
+    program: [],
     
     okul: "",
     sinif: "",
@@ -99,7 +99,7 @@ function KayitPage() {
     if (step === 0) {
       return !!form.kademe;
     }
-    if (step === 1) return form.program && form.okul && form.sinif;
+    if (step === 1) return form.program.length > 0 && form.okul && form.sinif;
     if (step === 2)
       return (
         form.veliAd &&
@@ -245,8 +245,15 @@ function KayitPage() {
                     ].map((alan) => (
                       <Choice
                         key={alan}
-                        active={form.program === alan}
-                        onClick={() => set("program", alan)}
+                        active={form.program.includes(alan)}
+                        onClick={() =>
+                          set(
+                            "program",
+                            form.program.includes(alan)
+                              ? form.program.filter((a) => a !== alan)
+                              : [...form.program, alan],
+                          )
+                        }
                         title={alan}
                       />
                     ))}
