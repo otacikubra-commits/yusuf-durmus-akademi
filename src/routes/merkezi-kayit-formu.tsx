@@ -228,40 +228,12 @@ function KayitPage() {
                     />
                     <Choice
                       active={form.kademe === "lise"}
-                      onClick={() => {
-                        set("kademe", "lise");
-                        set("katilim", "tek");
-                      }}
+                      onClick={() => set("kademe", "lise")}
                       title="Lise"
                       sub="9, 10, 11 veya 12. Sınıf"
                     />
                   </div>
                 </Field>
-
-                {form.kademe === "ortaokul" && (
-                  <Field label="Katılım Türü">
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      <Choice
-                        active={form.katilim === "tek"}
-                        onClick={() => set("katilim", "tek")}
-                        title="Çocuğum tek katılacak"
-                        sub="Yatılı, refakatçisiz"
-                      />
-                      <Choice
-                        active={form.katilim === "aile"}
-                        onClick={() => set("katilim", "aile")}
-                        title="Ailece katılacağız"
-                        sub="Anne-Baba-Çocuk programı"
-                      />
-                    </div>
-                  </Field>
-                )}
-                {form.kademe === "lise" && (
-                  <p className="text-sm text-muted-foreground italic">
-                    Lise kamplarında katılım türü otomatik olarak “Öğrenci Tek
-                    Katılacak” seçilmiştir.
-                  </p>
-                )}
               </div>
             )}
 
