@@ -479,7 +479,7 @@ function Choice({
   active: boolean;
   onClick: () => void;
   title: string;
-  sub: string;
+  sub?: string;
 }) {
   return (
     <button
@@ -492,7 +492,7 @@ function Choice({
       }`}
     >
       <div className="font-display text-xl text-navy-deep">{title}</div>
-      <div className="text-sm text-muted-foreground mt-1">{sub}</div>
+      {sub && <div className="text-sm text-muted-foreground mt-1">{sub}</div>}
     </button>
   );
 }
