@@ -25,7 +25,7 @@ export const Route = createFileRoute("/merkezi-kayit-formu")({
 type Form = {
   kademe: "" | "ortaokul" | "lise";
   program: string;
-  donem: string;
+  
   okul: string;
   sinif: string;
   veliAd: string;
@@ -43,7 +43,7 @@ type Form = {
 
 const steps = [
   "Temel Seçim",
-  "Kamp & Dönem",
+  "Kamp Programı",
   "İletişim",
   "Sağlık & Onay",
 ] as const;
@@ -57,13 +57,6 @@ const liseProgramlari = [
 const ortaokulProgramlari = [
   "Ekoloji & Doğa Okulu",
   "Mikroskop Atölyesi",
-];
-const donemler = [
-  "1. Dönem — 15-29 Haziran",
-  "2. Dönem — 1-15 Temmuz",
-  "3. Dönem — 18 Temmuz - 1 Ağustos",
-  "4. Dönem — 4-18 Ağustos",
-];
 
 function KayitPage() {
   const [step, setStep] = useState(0);
@@ -71,7 +64,7 @@ function KayitPage() {
   const [form, setForm] = useState<Form>({
     kademe: "",
     program: "",
-    donem: "",
+    
     okul: "",
     sinif: "",
     veliAd: "",
