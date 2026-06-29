@@ -70,7 +70,6 @@ function KayitPage() {
   const [done, setDone] = useState(false);
   const [form, setForm] = useState<Form>({
     kademe: "",
-    katilim: "",
     program: "",
     donem: "",
     okul: "",
@@ -103,9 +102,7 @@ function KayitPage() {
 
   const canNext = (() => {
     if (step === 0) {
-      if (!form.kademe) return false;
-      if (form.kademe === "ortaokul" && !form.katilim) return false;
-      return true;
+      return !!form.kademe;
     }
     if (step === 1) return form.program && form.donem && form.okul && form.sinif;
     if (step === 2)
