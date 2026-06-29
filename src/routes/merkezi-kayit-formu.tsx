@@ -25,7 +25,7 @@ export const Route = createFileRoute("/merkezi-kayit-formu")({
 type Form = {
   kademe: "" | "ortaokul" | "lise";
   program: string;
-  donem: string;
+  
   okul: string;
   sinif: string;
   veliAd: string;
@@ -43,7 +43,7 @@ type Form = {
 
 const steps = [
   "Temel Seçim",
-  "Kamp & Dönem",
+  "Kamp Programı",
   "İletişim",
   "Sağlık & Onay",
 ] as const;
@@ -58,12 +58,7 @@ const ortaokulProgramlari = [
   "Ekoloji & Doğa Okulu",
   "Mikroskop Atölyesi",
 ];
-const donemler = [
-  "1. Dönem — 15-29 Haziran",
-  "2. Dönem — 1-15 Temmuz",
-  "3. Dönem — 18 Temmuz - 1 Ağustos",
-  "4. Dönem — 4-18 Ağustos",
-];
+
 
 function KayitPage() {
   const [step, setStep] = useState(0);
@@ -71,7 +66,7 @@ function KayitPage() {
   const [form, setForm] = useState<Form>({
     kademe: "",
     program: "",
-    donem: "",
+    
     okul: "",
     sinif: "",
     veliAd: "",
@@ -104,7 +99,7 @@ function KayitPage() {
     if (step === 0) {
       return !!form.kademe;
     }
-    if (step === 1) return form.program && form.donem && form.okul && form.sinif;
+    if (step === 1) return form.program && form.okul && form.sinif;
     if (step === 2)
       return (
         form.veliAd &&
@@ -258,20 +253,6 @@ function KayitPage() {
                   </div>
                 </Field>
 
-                <Field label="Kamp Dönemi / Tarihi">
-                  <select
-                    className="input"
-                    value={form.donem}
-                    onChange={(e) => set("donem", e.target.value)}
-                  >
-                    <option value="">Seçiniz…</option>
-                    {donemler.map((d) => (
-                      <option key={d} value={d}>
-                        {d}
-                      </option>
-                    ))}
-                  </select>
-                </Field>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Öğrencinin Mevcut Okulu">
                     <input
