@@ -24,7 +24,6 @@ export const Route = createFileRoute("/merkezi-kayit-formu")({
 
 type Form = {
   kademe: "" | "ortaokul" | "lise";
-  katilim: "" | "tek" | "aile";
   program: string;
   donem: string;
   okul: string;
@@ -71,7 +70,6 @@ function KayitPage() {
   const [done, setDone] = useState(false);
   const [form, setForm] = useState<Form>({
     kademe: "",
-    katilim: "",
     program: "",
     donem: "",
     okul: "",
@@ -104,9 +102,7 @@ function KayitPage() {
 
   const canNext = (() => {
     if (step === 0) {
-      if (!form.kademe) return false;
-      if (form.kademe === "ortaokul" && !form.katilim) return false;
-      return true;
+      return !!form.kademe;
     }
     if (step === 1) return form.program && form.donem && form.okul && form.sinif;
     if (step === 2)
@@ -232,40 +228,12 @@ function KayitPage() {
                     />
                     <Choice
                       active={form.kademe === "lise"}
-                      onClick={() => {
-                        set("kademe", "lise");
-                        set("katilim", "tek");
-                      }}
+                      onClick={() => set("kademe", "lise")}
                       title="Lise"
                       sub="9, 10, 11 veya 12. Sınıf"
                     />
                   </div>
                 </Field>
-
-                {form.kademe === "ortaokul" && (
-                  <Field label="Katılım Türü">
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      <Choice
-                        active={form.katilim === "tek"}
-                        onClick={() => set("katilim", "tek")}
-                        title="Çocuğum tek katılacak"
-                        sub="Yatılı, refakatçisiz"
-                      />
-                      <Choice
-                        active={form.katilim === "aile"}
-                        onClick={() => set("katilim", "aile")}
-                        title="Ailece katılacağız"
-                        sub="Anne-Baba-Çocuk programı"
-                      />
-                    </div>
-                  </Field>
-                )}
-                {form.kademe === "lise" && (
-                  <p className="text-sm text-muted-foreground italic">
-                    Lise kamplarında katılım türü otomatik olarak “Öğrenci Tek
-                    Katılacak” seçilmiştir.
-                  </p>
-                )}
               </div>
             )}
 
