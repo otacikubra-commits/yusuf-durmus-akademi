@@ -104,7 +104,7 @@ function KayitPage() {
     if (step === 0) {
       return !!form.kademe;
     }
-    if (step === 1) return form.program && form.donem && form.okul && form.sinif;
+    if (step === 1) return form.program && form.okul && form.sinif;
     if (step === 2)
       return (
         form.veliAd &&
@@ -258,20 +258,6 @@ function KayitPage() {
                   </div>
                 </Field>
 
-                <Field label="Kamp Dönemi / Tarihi">
-                  <select
-                    className="input"
-                    value={form.donem}
-                    onChange={(e) => set("donem", e.target.value)}
-                  >
-                    <option value="">Seçiniz…</option>
-                    {donemler.map((d) => (
-                      <option key={d} value={d}>
-                        {d}
-                      </option>
-                    ))}
-                  </select>
-                </Field>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Öğrencinin Mevcut Okulu">
                     <input
