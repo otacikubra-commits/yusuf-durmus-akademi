@@ -239,20 +239,25 @@ function KayitPage() {
 
             {step === 1 && (
               <div className="space-y-8">
-                <Field label="Tercih Edilen Kamp Programı">
-                  <select
-                    className="input"
-                    value={form.program}
-                    onChange={(e) => set("program", e.target.value)}
-                  >
-                    <option value="">Seçiniz…</option>
-                    {programlar.map((p) => (
-                      <option key={p} value={p}>
-                        {p}
-                      </option>
+                <Field label="Kampa katılmak istediğiniz alanı işaretleyiniz">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {[
+                      "Biyoloji",
+                      "Fizik",
+                      "Kimya",
+                      "Matematik",
+                      "Ekoloji Temelli Doğa Eğitimi",
+                    ].map((alan) => (
+                      <Choice
+                        key={alan}
+                        active={form.program === alan}
+                        onClick={() => set("program", alan)}
+                        title={alan}
+                      />
                     ))}
-                  </select>
+                  </div>
                 </Field>
+
                 <Field label="Kamp Dönemi / Tarihi">
                   <select
                     className="input"
