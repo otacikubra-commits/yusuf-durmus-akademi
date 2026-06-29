@@ -57,6 +57,8 @@ const liseProgramlari = [
 const ortaokulProgramlari = [
   "Ekoloji & Doğa Okulu",
   "Mikroskop Atölyesi",
+];
+
 
 function KayitPage() {
   const [step, setStep] = useState(0);
