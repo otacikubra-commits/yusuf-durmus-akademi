@@ -24,7 +24,6 @@ export const Route = createFileRoute("/merkezi-kayit-formu")({
 
 type Form = {
   kademe: "" | "ortaokul" | "lise";
-  katilim: "" | "tek" | "aile";
   program: string;
   donem: string;
   okul: string;
