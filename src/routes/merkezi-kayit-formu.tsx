@@ -284,7 +284,7 @@ function KayitPage() {
                       onChange={(e) => set("veliAd", e.target.value)}
                     />
                   </Field>
-                  <Field label="Veli Telefon (SMS için)">
+                  <Field label="Veli Telefon">
                     <input
                       className="input"
                       value={form.veliTel}
@@ -293,7 +293,7 @@ function KayitPage() {
                     />
                   </Field>
                 </div>
-                <Field label="Veli E-posta (broşür ve fatura için)">
+                <Field label="Veli E-posta">
                   <input
                     type="email"
                     className="input"
