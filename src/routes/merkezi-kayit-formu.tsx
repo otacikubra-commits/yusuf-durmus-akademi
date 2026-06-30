@@ -25,14 +25,18 @@ export const Route = createFileRoute("/merkezi-kayit-formu")({
 type Form = {
   kademe: "" | "ortaokul" | "lise";
   program: string[];
-  
+
   okul: string;
   sinif: string;
+  ogrenciAd: string;
+  tckn: string;
+  dogumTarihi: string;
+  dogumYeri: string;
+  ogrenciMail: string;
+  ogrenciTel: string;
   veliAd: string;
   veliTel: string;
   veliMail: string;
-  ogrenciAd: string;
-  tckn: string;
   ilac: "evet" | "hayir";
   ilacAciklama: string;
   alerji: "evet" | "hayir";
@@ -66,14 +70,18 @@ function KayitPage() {
   const [form, setForm] = useState<Form>({
     kademe: "",
     program: [],
-    
+
     okul: "",
     sinif: "",
+    ogrenciAd: "",
+    tckn: "",
+    dogumTarihi: "",
+    dogumYeri: "",
+    ogrenciMail: "",
+    ogrenciTel: "",
     veliAd: "",
     veliTel: "",
     veliMail: "",
-    ogrenciAd: "",
-    tckn: "",
     ilac: "hayir",
     ilacAciklama: "",
     alerji: "hayir",
