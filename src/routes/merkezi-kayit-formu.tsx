@@ -294,52 +294,99 @@ function KayitPage() {
             )}
 
             {step === 2 && (
-              <div className="space-y-8">
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <Field label="Veli Ad Soyad">
-                    <input
-                      className="input"
-                      value={form.veliAd}
-                      onChange={(e) => set("veliAd", e.target.value)}
-                    />
-                  </Field>
-                  <Field label="Veli Telefon">
-                    <input
-                      className="input"
-                      value={form.veliTel}
-                      onChange={(e) => set("veliTel", e.target.value)}
-                      placeholder="05XX XXX XX XX"
-                    />
-                  </Field>
+              <div className="space-y-10">
+                <div className="space-y-6">
+                  <h3 className="font-display text-xl text-navy-deep border-b border-border pb-2">
+                    Öğrenci Bilgileri
+                  </h3>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <Field label="Öğrenci Ad Soyad">
+                      <input
+                        className="input"
+                        value={form.ogrenciAd}
+                        onChange={(e) => set("ogrenciAd", e.target.value)}
+                      />
+                    </Field>
+                    <Field
+                      label="Öğrencinin T.C. Kimlik No"
+                      hint="Sigorta ve resmi konaklama bildirimi için yasal zorunluluktur."
+                    >
+                      <input
+                        inputMode="numeric"
+                        maxLength={11}
+                        className="input"
+                        value={form.tckn}
+                        onChange={(e) =>
+                          set("tckn", e.target.value.replace(/\D/g, ""))
+                        }
+                      />
+                    </Field>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <Field label="Doğum Tarihi">
+                      <input
+                        type="date"
+                        className="input"
+                        value={form.dogumTarihi}
+                        onChange={(e) => set("dogumTarihi", e.target.value)}
+                      />
+                    </Field>
+                    <Field label="Doğum Yeri">
+                      <input
+                        className="input"
+                        value={form.dogumYeri}
+                        onChange={(e) => set("dogumYeri", e.target.value)}
+                        placeholder="Örn. Ankara"
+                      />
+                    </Field>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <Field label="Öğrenci E-posta">
+                      <input
+                        type="email"
+                        className="input"
+                        value={form.ogrenciMail}
+                        onChange={(e) => set("ogrenciMail", e.target.value)}
+                      />
+                    </Field>
+                    <Field label="Öğrenci Cep Telefonu">
+                      <input
+                        className="input"
+                        value={form.ogrenciTel}
+                        onChange={(e) => set("ogrenciTel", e.target.value)}
+                        placeholder="05XX XXX XX XX"
+                      />
+                    </Field>
+                  </div>
                 </div>
-                <Field label="Veli E-posta">
-                  <input
-                    type="email"
-                    className="input"
-                    value={form.veliMail}
-                    onChange={(e) => set("veliMail", e.target.value)}
-                  />
-                </Field>
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <Field label="Öğrenci Ad Soyad">
+
+                <div className="space-y-6">
+                  <h3 className="font-display text-xl text-navy-deep border-b border-border pb-2">
+                    Veli Bilgileri
+                  </h3>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <Field label="Veli Ad Soyad">
+                      <input
+                        className="input"
+                        value={form.veliAd}
+                        onChange={(e) => set("veliAd", e.target.value)}
+                      />
+                    </Field>
+                    <Field label="Veli Telefon">
+                      <input
+                        className="input"
+                        value={form.veliTel}
+                        onChange={(e) => set("veliTel", e.target.value)}
+                        placeholder="05XX XXX XX XX"
+                      />
+                    </Field>
+                  </div>
+                  <Field label="Veli E-posta">
                     <input
+                      type="email"
                       className="input"
-                      value={form.ogrenciAd}
-                      onChange={(e) => set("ogrenciAd", e.target.value)}
-                    />
-                  </Field>
-                  <Field
-                    label="Öğrenci T.C. Kimlik No"
-                    hint="Sigorta ve resmi konaklama bildirimi için yasal zorunluluktur."
-                  >
-                    <input
-                      inputMode="numeric"
-                      maxLength={11}
-                      className="input"
-                      value={form.tckn}
-                      onChange={(e) =>
-                        set("tckn", e.target.value.replace(/\D/g, ""))
-                      }
+                      value={form.veliMail}
+                      onChange={(e) => set("veliMail", e.target.value)}
                     />
                   </Field>
                 </div>
