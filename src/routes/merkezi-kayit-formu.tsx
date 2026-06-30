@@ -110,11 +110,15 @@ function KayitPage() {
     if (step === 1) return form.program.length > 0 && form.okul && form.sinif;
     if (step === 2)
       return (
+        form.ogrenciAd &&
+        form.tckn.length === 11 &&
+        form.dogumTarihi &&
+        form.dogumYeri &&
+        form.ogrenciMail &&
+        form.ogrenciTel &&
         form.veliAd &&
         form.veliTel &&
-        form.veliMail &&
-        form.ogrenciAd &&
-        form.tckn.length === 11
+        form.veliMail
       );
     if (step === 3) return form.kuralOnay && form.kvkkOnay;
     return false;
