@@ -5,7 +5,7 @@ import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
 const links = [
   { to: "/", label: "Ana Sayfa" },
   { to: "/kurumsal", label: "Kurumsal" },
-  { to: "/lise-bilim-ve-olimpiyat-kamplari", label: "Lise Kampları" },
+  { to: "/lise-bilim-ve-olimpiyat-kamplari", label: "Bilim Kampları" },
   { to: "/ortaokul-ekoloji-ve-doga-okulu", label: "Doğa Okulu" },
   { to: "/gurur-tablosu", label: "Gurur Tablosu" },
 ] as const;
